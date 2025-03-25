@@ -8,10 +8,3 @@ A real-time voice assistant powered by Deepgram (Speech-to-Text & Text-to-Speech
 ✅ Text-to-Speech (TTS) – Deepgram converts responses into natural-sounding speech.
 ✅ End-to-End Automation – Listens, processes, and speaks back in a continuous loop.
 ✅ Streamlit UI – Interactive interface for easy interaction and monitoring.
-
-📂 Project Structure
-📂 VoiceBot/
-│── 📄 main.py               # Main application script
-│── 📄 prompt.txt            # System prompt template for ChatGroq
-│── 📄 requirements.txt      # Required dependencies
-│── 📄 .env                  # API keys and environment variables
