@@ -1,0 +1,5 @@
+env\
+.env
+requirements.txt
+.qodo
+env
