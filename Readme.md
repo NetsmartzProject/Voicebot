@@ -66,8 +66,3 @@ streamlit run main.py
 - **Streamlit** – Interactive UI
 
 ---
-
-## 🚀 Future Enhancements
-- 🔹 Support for multiple languages
-- 🔹 Customizable voice selection
-- 🔹 Integration with WhatsApp & Telegram bots
