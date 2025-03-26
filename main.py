@@ -176,7 +176,6 @@ async def get_transcript(callback):
             smart_format=True,
         )
 
-        # Start and Finish Deepgram Connection together to ensure cleanup
         try:
             await dg_connection.start(options)
 
@@ -198,14 +197,12 @@ async def get_transcript(callback):
 def main():
     st.title("Conversational AI with Speech Transcription")
 
-    # Initialize session state variables
     if 'llm' not in st.session_state:
         st.session_state.llm = LanguageModelProcessor()
 
     if 'transcription_response' not in st.session_state:
         st.session_state.transcription_response = ""
 
-    # Streamlit button to start conversation
     if st.button("Start Listening"):
         async def conversation_loop():
             def handle_full_sentence(full_sentence):
@@ -220,7 +217,6 @@ def main():
             while True:
                 await get_transcript(handle_full_sentence)
 
-                # Check for "goodbye" to exit the loop
                 if "goodbye" in st.session_state.transcription_response.lower():
                     st.write("Conversation ended.")
                     break
@@ -229,10 +225,8 @@ def main():
 
                 tts.speak(llm_response, deepgram_api_key, tts_model_name)
 
-                # Reset transcription_response
                 st.session_state.transcription_response = ""
 
-        # Run the async function
         asyncio.run(conversation_loop())
 
 
